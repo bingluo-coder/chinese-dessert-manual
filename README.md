@@ -4,6 +4,18 @@ Welcome to a small, tasty tour through Chinese desserts, pastries, teas, and cru
 
 This manual is not trying to be a textbook. It is more like opening a snack drawer with a friend: a little sweet, a little fragrant, sometimes spicy, and always worth exploring.
 
+## A Little Gift From Home
+
+Before the snacks, there is something even sweeter: two paintings from my daughters, Lele and Lili, sent along with the food for Blandine.
+
+<img src="paintings/Lele.jpg" alt="Painting by Lele" width="360">
+
+<img src="paintings/Lili.jpg" alt="Painting by Lili" width="520">
+
+## Printable Menu
+
+For printing on paper, use the consolidated [Gift Menu for Blandine](PRINTABLE_MENU.md).
+
 ## Snack Map
 
 | Craving | Go Here |
