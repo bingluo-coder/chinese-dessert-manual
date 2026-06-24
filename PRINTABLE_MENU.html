@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gift Menu for Blandine</title>
+  <style>
+    :root {
+      --ink: #2d241f;
+      --muted: #6d5d52;
+      --paper: #fffaf1;
+      --card: #ffffff;
+      --accent: #9b3d2e;
+      --accent-soft: #f1ded5;
+      --gold: #c28b2c;
+      --line: #ead9c7;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    .hero {
+      margin-bottom: 20px;
+      padding: 26px 28px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(135deg, #fff7e7, #f9ebe2 55%, #fffaf1);
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 34px;
+      letter-spacing: 0.04em;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .section-title {
+      margin: 22px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--gold);
+      color: var(--accent);
+      font-size: 22px;
+      break-after: avoid;
+    }
+
+    .paintings {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .painting-card,
+    .menu-card,
+    .note-card {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+      box-shadow: 0 2px 10px rgba(80, 50, 25, 0.06);
+    }
+
+    .painting-card {
+      padding: 12px;
+      text-align: center;
+    }
+
+    .painting-card img {
+      max-width: 100%;
+      max-height: 210px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .painting-card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .menu-card {
+      overflow: hidden;
+    }
+
+    .menu-card img {
+      display: block;
+      width: 100%;
+      max-height: 145px;
+      object-fit: contain;
+      background: #fbf5ea;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .menu-card.tall img { max-height: 185px; }
+    .menu-card.wide img { max-height: 115px; }
+
+    .card-body {
+      padding: 11px 12px 12px;
+    }
+
+    h3 {
+      margin: 0 0 6px;
+      color: var(--accent);
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    h4 {
+      margin: 10px 0 5px;
+      color: var(--accent);
+      font-size: 13px;
+    }
+
+    p { margin: 0 0 6px; }
+
+    .label {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 7px 0;
+      font-size: 11px;
+    }
+
+    th,
+    td {
+      padding: 4px 5px;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .note-card {
+      margin-top: 12px;
+      padding: 12px 14px;
+      background: #fff7e7;
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+
+      body {
+        background: white;
+        font-size: 10.5px;
+      }
+
+      main { padding: 0; }
+
+      .hero {
+        padding: 14px 18px;
+        margin-bottom: 12px;
+        border-radius: 12px;
+      }
+
+      h1 { font-size: 26px; }
+      .subtitle { font-size: 12px; }
+      .section-title { font-size: 18px; margin-top: 14px; }
+      .menu-grid { gap: 8px; }
+      .paintings { gap: 8px; }
+      .menu-card, .painting-card, .note-card { box-shadow: none; border-radius: 10px; }
+      .card-body { padding: 8px 9px; }
+      h3 { font-size: 13px; }
+      .menu-card img { max-height: 100px; }
+      .menu-card.tall img { max-height: 130px; }
+      .menu-card.wide img { max-height: 85px; }
+      .painting-card img { max-height: 150px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <h1>Gift Menu for Blandine</h1>
+      <p class="subtitle">A small menu from Chongqing and home: teas, pastries, mooncakes, local snacks, and two paintings from Lele and Lili.</p>
+    </section>
+
+    <h2 class="section-title">A Little Gift From Home</h2>
+    <section class="paintings">
+      <article class="painting-card">
+        <img src="paintings/Lele.jpg" alt="Painting by Lele">
+        <p>Lele's painting brings a calm little owl, soft brush colors, and a quiet hello from home.</p>
+      </article>
+      <article class="painting-card">
+        <img src="paintings/Lili.jpg" alt="Painting by Lili">
+        <p>Lili's painting is bright and playful, full of color, hearts, little characters, and cheerful energy.</p>
+      </article>
+    </section>
+
+    <h2 class="section-title">Mooncakes: 4 Flavors, 4 Pieces Each</h2>
+    <section class="menu-grid">
+      <article class="menu-card">
+        <img src="mooncake/meiguidousha.webp" alt="Rose Red Bean Mooncake">
+        <div class="card-body">
+          <h3>Rose Red Bean Mooncake</h3>
+          <p>This Cantonese-style mooncake uses a rose red bean filling. It combines the gentle sweetness of red bean paste with the floral aroma of rose.</p>
+          <p><span class="label">Key ingredients:</span> rose red bean filling, sugar, red beans, vegetable oil, wheat flour, syrup, egg, and rose preparation.</p>
+          <p><span class="label">Allergen notes:</span> contains gluten, soy, egg, and peanut products. It may also contain nuts and dairy products.</p>
+          <p><span class="label">Storage:</span> keep in a cool, dry place. Eat soon after opening.</p>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="mooncake/huangyoukafei.png" alt="Butter Coffee Mooncake">
+        <div class="card-body">
+          <h3>Butter Coffee Mooncake</h3>
+          <p>A modern mooncake with butter coffee filling made with white kidney beans, butter, and instant coffee powder.</p>
+          <p><span class="label">Key ingredients:</span> butter coffee filling, sugar, white kidney beans, vegetable oil, butter, instant coffee powder, wheat flour, syrup, egg, and salt.</p>
+          <p><span class="label">Allergen notes:</span> contains gluten, soy, egg, and dairy products. It may also contain peanut and nut products.</p>
+          <p><span class="label">Storage:</span> keep in a cool, dry place away from direct sunlight.</p>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="mooncake/naiyouyerong.webp" alt="Creamy Coconut Mooncake">
+        <div class="card-body">
+          <h3>Creamy Coconut Mooncake</h3>
+          <p>A Cantonese-style mooncake with chewy shredded coconut, sweet tropical flavor, butter, and winter melon paste.</p>
+          <p><span class="label">Key ingredients:</span> coconut filling, shredded coconut, glucose syrup, glutinous rice flour, winter melon paste, vegetable oil, butter, wheat flour, syrup, and egg.</p>
+          <p><span class="label">Allergen notes:</span> contains gluten, soy, egg, peanut, and dairy products. It may also contain nuts.</p>
+          <p><span class="label">Storage:</span> keep in a cool, dry place. Eat soon after opening.</p>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="mooncake/wuren.webp" alt="Five-Nut Mooncake">
+        <div class="card-body">
+          <h3>Five-Nut Mooncake</h3>
+          <p>A classic Cantonese mooncake with a dense filling of nuts, seeds, candied fruits, winter melon, and a sweet-savory taste.</p>
+          <p><span class="label">Key ingredients:</span> five-nut filling, sugar, glutinous rice flour, pork fat, walnut, winter melon paste, sesame seeds, candied winter melon, rose preparation, candied citrus, candied tomato, vegetable oil, watermelon seeds, liquor, almond, salt, olive kernel, wheat flour, syrup, and egg.</p>
+          <p><span class="label">Allergen notes:</span> contains gluten, egg, peanut, and nut products. It may also contain dairy products.</p>
+          <p><span class="label">Storage:</span> keep in a cool, dry place. Eat soon after opening.</p>
+        </div>
+      </article>
+    </section>
+
+    <div class="note-card"><span class="label">Mooncake packaging note:</span> some packages include an oxygen absorber. Do not eat it and do not microwave it.</div>
+
+    <h2 class="section-title">Fengli Su And Assorted Pastries: 4 Boxes</h2>
+    <section class="menu-grid">
+      <article class="menu-card wide">
+        <img src="fenglisu/intro.png" alt="Fengli Su assorted pastry box">
+        <div class="card-body">
+          <h3>Four Zhang Feng Ji Pastry Boxes</h3>
+          <p>This set comes from Xiamen, Fujian. It includes pineapple cakes, cranberry snowflake crisps, mango milk cakes, and chilled mung bean pastries.</p>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="fenglisu/fenglisu.png" alt="Pineapple Cake">
+        <div class="card-body">
+          <h3>Pineapple Cake</h3>
+          <p>A baked pastry with a soft, crumbly crust and sweet fruit filling. Pineapple pulp is mixed with winter melon paste for a smooth, jam-like texture.</p>
+          <p><span class="label">Key ingredients:</span> pineapple filling, pineapple pulp, winter melon paste, corn syrup, sugar, wheat starch, vegetable oil, wheat flour, milk powder, egg, maltose syrup, and salt.</p>
+          <p><span class="label">Allergen notes:</span> contains gluten, dairy, and egg products.</p>
+          <p><span class="label">Storage:</span> keep in a cool, dry place away from direct sunlight.</p>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="fenglisu/xuehuasu.png" alt="Cranberry Snowflake Crisp">
+        <div class="card-body">
+          <h3>Cranberry Snowflake Crisp</h3>
+          <p>A chewy, milky confection with biscuit pieces and dried cranberries. Soft candy texture, crunchy biscuit, and tart fruit.</p>
+          <p><span class="label">Key ingredients:</span> maltose syrup, trehalose, biscuits, glucose, whole milk powder, cream, dried cranberries, sorbitol syrup, gelatin powder, and salt.</p>
+          <p><span class="label">Allergen notes:</span> contains dairy and gluten products.</p>
+          <p><span class="label">Storage:</span> keep in a cool, dry place at a stable temperature. Avoid heat and direct sunlight.</p>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="fenglisu/mangocake.png" alt="Mango Milk Cake">
+        <div class="card-body">
+          <h3>Mango Milk Cake</h3>
+          <p>A soft gel-style candy with a creamy milk base and pieces of dried mango. Sweet, chewy, fruity, and aromatic.</p>
+          <p><span class="label">Key ingredients:</span> maltose syrup, trehalose, dried mango, glucose, whole milk powder, cream, sorbitol syrup, gelatin powder, and salt.</p>
+          <p><span class="label">Allergen notes:</span> contains dairy, dried mango, and gluten products.</p>
+          <p><span class="label">Storage:</span> keep in a cool, dry place at a stable temperature. Avoid heat and direct sunlight.</p>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="fenglisu/lvdouhuang.png" alt="Chilled Mung Bean Pastry">
+        <div class="card-body">
+          <h3>Chilled Mung Bean Pastry</h3>
+          <p>A smooth mung bean pastry with a rich buttery taste. It can be eaten directly from the package and tastes better when chilled.</p>
+          <p><span class="label">Key ingredients:</span> mung bean paste, mung beans, maltitol, water, trehalose, erythritol, vegetable oil, salt, potassium sorbate, and butter.</p>
+          <p><span class="label">Allergen notes:</span> contains butter. It may not be suitable for people avoiding dairy.</p>
+          <p><span class="label">Storage:</span> keep in a cool, dry place away from direct sunlight. Refrigerating before eating is recommended.</p>
+        </div>
+      </article>
+    </section>
+
+    <div class="note-card"><span class="label">Pastry safety note:</span> ready to eat after opening. Do not swallow a whole piece at once. Older adults and children should eat them with adult supervision. If mold or spoilage appears, do not eat it.</div>
+
+    <h2 class="section-title">Chagee Tea: 2 Tea Packages</h2>
+    <section class="menu-grid">
+      <article class="menu-card tall">
+        <img src="chagee/package1/Screenshot 2026-06-24 211133.png" alt="Chagee six-flavor classic tea collection">
+        <div class="card-body">
+          <h3>Package 1: Six-Flavor Classic Tea Collection</h3>
+          <p>Six individually packed teas combining pure tea, floral tea, and fruit-scented oolong tea.</p>
+          <table>
+            <tr><th>Tea</th><th>Style</th><th>Quantity</th></tr>
+            <tr><td>Wanli Mulan</td><td>Ceylon black tea</td><td>3.0 g x 3 bags</td></tr>
+            <tr><td>Xingshi Chunshan</td><td>Longjing green tea</td><td>3.0 g x 3 bags</td></tr>
+            <tr><td>Boya Juexian</td><td>Jasmine green tea</td><td>3.0 g x 2 bags</td></tr>
+            <tr><td>Xunxiang Shancha</td><td>Tea-blossom oolong</td><td>3.0 g x 2 bags</td></tr>
+            <tr><td>Xiameng Meigui</td><td>Honeydew oolong</td><td>3.0 g x 2 bags</td></tr>
+            <tr><td>Huatian Wulong</td><td>Peach oolong</td><td>3.0 g x 2 bags</td></tr>
+          </table>
+        </div>
+      </article>
+
+      <article class="menu-card tall">
+        <img src="chagee/package1/Screenshot 2026-06-24 211207.png" alt="Wanli Mulan Ceylon black tea">
+        <div class="card-body">
+          <h3>Wanli Mulan: Ceylon Black Tea</h3>
+          <p>Ceylon black tea from Sri Lanka with bell orchid and mint-like fragrance, bright orange-red liquor, and a thick, lingering taste.</p>
+          <p><span class="label">Base tea:</span> Ceylon black tea</p>
+          <p><span class="label">Ingredients:</span> black tea</p>
+          <p><span class="label">Net weight:</span> 9 g, 3 g x 3 bags</p>
+          <p><span class="label">Shelf life:</span> 24 months</p>
+        </div>
+      </article>
+
+      <article class="menu-card tall">
+        <img src="chagee/package1/Screenshot 2026-06-24 211217.png" alt="Xingshi Chunshan Longjing green tea">
+        <div class="card-body">
+          <h3>Xingshi Chunshan: Longjing Green Tea</h3>
+          <p>Longjing green tea from Qiantang, Hangzhou. Fresh bean-like and chestnut-like aroma, clear yellow-green liquor, and a layered refreshing taste.</p>
+          <p><span class="label">Base tea:</span> Longjing green tea</p>
+          <p><span class="label">Ingredients:</span> baked green tea and jasmine flower</p>
+          <p><span class="label">Net weight:</span> 9 g, 3 g x 3 bags</p>
+          <p><span class="label">Shelf life:</span> 18 months</p>
+        </div>
+      </article>
+
+      <article class="menu-card tall">
+        <img src="chagee/package1/Screenshot 2026-06-24 211225.png" alt="Boya Juexian jasmine green tea">
+        <div class="card-body">
+          <h3>Boya Juexian: Jasmine Green Tea</h3>
+          <p>Baked green tea with jasmine flowers. Fresh jasmine fragrance, clear yellow-green liquor, and a rich, elegant aftertaste.</p>
+          <p><span class="label">Base tea:</span> baked green tea</p>
+          <p><span class="label">Ingredients:</span> baked green tea and jasmine flower</p>
+          <p><span class="label">Net weight:</span> 6 g, 3 g x 2 bags</p>
+          <p><span class="label">Shelf life:</span> 18 months</p>
+        </div>
+      </article>
+
+      <article class="menu-card tall">
+        <img src="chagee/package1/Screenshot 2026-06-24 211232.png" alt="Xunxiang Shancha tea-blossom oolong">
+        <div class="card-body">
+          <h3>Xunxiang Shancha: Tea-Blossom Oolong</h3>
+          <p>Oolong tea scented with tea blossoms and jasmine flower concentrate. Bright, smooth, honeyed floral sweetness with a long finish.</p>
+          <p><span class="label">Base tea:</span> oolong tea</p>
+          <p><span class="label">Ingredients:</span> oolong tea, tea blossom, and jasmine flower concentrate</p>
+          <p><span class="label">Net weight:</span> 6 g, 3 g x 2 bags</p>
+          <p><span class="label">Shelf life:</span> 18 months</p>
+        </div>
+      </article>
+
+      <article class="menu-card tall">
+        <img src="chagee/package1/Screenshot 2026-06-24 211238.png" alt="Xiameng Meigui honeydew oolong">
+        <div class="card-body">
+          <h3>Xiameng Meigui: Honeydew Oolong</h3>
+          <p>Oolong tea blended with honeydew and honeydew concentrate. Honeydew aroma, clear yellow-green liquor, and a sweet layered finish.</p>
+          <p><span class="label">Base tea:</span> oolong tea</p>
+          <p><span class="label">Ingredients:</span> oolong tea, honeydew, and honeydew concentrate</p>
+          <p><span class="label">Net weight:</span> 6 g, 3 g x 2 bags</p>
+          <p><span class="label">Shelf life:</span> 18 months</p>
+        </div>
+      </article>
+
+      <article class="menu-card tall">
+        <img src="chagee/package1/Screenshot 2026-06-24 211247.png" alt="Huatian Wulong peach oolong">
+        <div class="card-body">
+          <h3>Huatian Wulong: Peach Oolong</h3>
+          <p>Oolong tea blended with honey peach. Sweet, fruity, and smooth, with peach aroma layered over the oolong tea base.</p>
+          <p><span class="label">Base tea:</span> oolong tea</p>
+          <p><span class="label">Ingredients:</span> oolong tea and honey peach</p>
+          <p><span class="label">Net weight:</span> 6 g, 3 g x 2 bags</p>
+          <p><span class="label">Shelf life:</span> 18 months</p>
+        </div>
+      </article>
+
+      <article class="menu-card wide">
+        <img src="chagee/package1/drinking method.png" alt="Package 1 brewing method">
+        <div class="card-body">
+          <h3>Package 1 Brewing Method</h3>
+          <p><span class="label">Hot brew:</span> use 220 ml water at 90 C and steep for 3-5 minutes.</p>
+          <p><span class="label">Cold brew:</span> use 400 ml cold water, add ice or refrigerate, and steep for 20 minutes.</p>
+          <p class="small">Each tea bag can be brewed 2-3 times. Adjust water volume and method according to personal taste.</p>
+        </div>
+      </article>
+
+      <article class="menu-card tall">
+        <img src="chagee/pacakge2/Screenshot 2026-06-24 211655.png" alt="Chagee cold-brew flavored tea set">
+        <div class="card-body">
+          <h3>Package 2: Cold-Brew Flavored Tea Set</h3>
+          <p>Designed for convenient cold-brew preparation. It focuses on fruit and floral flavored teas with original tea leaves as the base.</p>
+          <table>
+            <tr><th>Tea</th><th>Style</th><th>Flavor</th></tr>
+            <tr><td>Grape Jasmine Green Tea</td><td>Green tea</td><td>grape, jasmine, fresh and sweet</td></tr>
+            <tr><td>Peach Oolong Tea</td><td>Oolong tea</td><td>peach, fruit tea, mellow oolong</td></tr>
+            <tr><td>Floral Black Tea</td><td>Black tea</td><td>citrus-floral, sweet and smooth</td></tr>
+          </table>
+        </div>
+      </article>
+
+      <article class="menu-card wide">
+        <img src="chagee/pacakge2/drinking method.png" alt="Package 2 brewing method">
+        <div class="card-body">
+          <h3>Package 2 Brewing Method</h3>
+          <p><span class="label">Shake brew:</span> add 500 ml water, shake for 30 seconds, and steep for 3-10 minutes. Room-temperature water and ice water both work.</p>
+          <table>
+            <tr><th>Drink</th><th>Method</th></tr>
+            <tr><td>Sparkling tea</td><td>tea bag, sparkling water, and ice</td></tr>
+            <tr><td>Milk tea</td><td>tea bag, milk or thick coconut milk, and ice</td></tr>
+            <tr><td>Fruit tea</td><td>tea bag, fresh fruit, and ice</td></tr>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <h2 class="section-title">Local Chongqing Snacks</h2>
+    <section class="menu-grid">
+      <article class="menu-card">
+        <img src="chongqingsnaks/guaiweihudou.png" alt="Guaiwei Hudou spicy-sweet broad beans">
+        <div class="card-body">
+          <h3>Guaiwei Hudou: Spicy-Sweet Broad Beans</h3>
+          <p>A crunchy broad bean snack with Chongqing-style mixed flavor: sweet, salty, spicy, savory, and lightly numbing.</p>
+          <p><span class="label">Key ingredients:</span> broad beans, sugar, vegetable oil, maltose, sweet bean sauce, chili, salt, Sichuan pepper, monosodium glutamate, ammonium bicarbonate, and sodium bicarbonate.</p>
+          <p><span class="label">Allergen notes:</span> contains wheat ingredients from the sweet bean sauce.</p>
+          <p><span class="label">Storage:</span> protect from heat, moisture, and crushing.</p>
+          <p><span class="label">Shelf life:</span> 12 months at room temperature.</p>
+          <p><span class="label">Eating method:</span> ready to eat after opening.</p>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="chongqingsnaks/mahua.jpeg" alt="Chen Changyin assorted mahua">
+        <div class="card-body">
+          <h3>Chen Changyin Mahua</h3>
+          <p>A traditional twisted fried dough snack. This assorted pack includes plain, honey, Sichuan pepper-salt, brown sugar, and spicy guaiwei flavors.</p>
+          <p><span class="label">Key ingredients:</span> wheat flour, vegetable oil, sugar, egg, salt, and flavor-specific additions such as Sichuan pepper, maltose, honey, brown sugar, chili, and spices.</p>
+          <p><span class="label">Allergen notes:</span> contains wheat flour and egg.</p>
+          <p><span class="label">Storage:</span> keep sealed in a cool, dry place to preserve crispness.</p>
+          <p><span class="label">Eating method:</span> ready to eat after opening.</p>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="chongqingsnaks/tianshitudoupian.png" alt="Angel potato chips Sichuan pepper spicy flavor">
+        <div class="card-body">
+          <h3>Angel Potato Chips: Sichuan Pepper Spicy Flavor</h3>
+          <p>Potato chips flavored with chili and Sichuan pepper for a spicy, fragrant, lightly numbing Chongqing-style mala taste.</p>
+          <p><span class="label">Flavor:</span> Sichuan pepper spicy.</p>
+          <p><span class="label">Key ingredients:</span> fresh potato, vegetable oil, chili powder, salt, monosodium glutamate, and Sichuan pepper powder.</p>
+          <p><span class="label">Net weight:</span> 28 g per bag.</p>
+          <p><span class="label">Storage:</span> store in a cool place away from light. Eat soon after opening to avoid moisture.</p>
+          <p><span class="label">Shelf life:</span> 10 months.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

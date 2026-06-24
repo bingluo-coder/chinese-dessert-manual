@@ -12,10 +12,6 @@ Before the snacks, there is something even sweeter: two paintings from my daught
 
 <img src="paintings/Lili.jpg" alt="Painting by Lili" width="520">
 
-## Printable Menu
-
-For printing on paper, use the consolidated [Gift Menu for Blandine](PRINTABLE_MENU.md).
-
 ## Snack Map
 
 | Craving | Go Here |
