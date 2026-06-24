@@ -36,7 +36,7 @@ Mahua is a traditional twisted fried dough snack. This assorted pack includes se
 
 ## Angel Potato Chips: Sichuan Pepper Spicy Flavor
 
-<img src="tianshitudoupian.avif" alt="Angel potato chips Sichuan pepper spicy flavor" width="320">
+<img src="tianshitudoupian.png" alt="Angel potato chips Sichuan pepper spicy flavor" width="320">
 
 These potato chips are flavored with chili and Sichuan pepper for a spicy, fragrant, and lightly numbing taste. They are a simple ready-to-eat snack with a Chongqing-style mala flavor profile.
 
